@@ -26,7 +26,7 @@ const corsOptions = {
   origin: '*', // Allow requests from any origin
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE', // Allow the specified HTTP methods
 };
-app.use(express_1.json());
+app.use(express.json());
 app.use(cors(corsOptions));
 const verifyToken = (req, res, next) => {
     const authHeader = req.header("Authorization");
