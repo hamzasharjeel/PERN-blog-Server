@@ -20,7 +20,6 @@ const prisma = new client_1.PrismaClient();
 const app = (0, express_1.default)();
 const jwtSecret = "mysecret";
 const port = process.env.PORT || 5000;
-app.use((0, cors_1.default)());
 const cors = require('cors');
 
 const corsOptions = {
