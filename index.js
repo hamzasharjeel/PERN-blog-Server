@@ -43,6 +43,11 @@ const verifyToken = (req, res, next) => {
         console.log(error.message);
     }
 };
+
+app.get('/', (req, res) => {
+    res.json({msg: 'welcome'});
+})
+
 app.post("/api/signup", (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { name, email, password, isAdmin } = req.body;
     try {
