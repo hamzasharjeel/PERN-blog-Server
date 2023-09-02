@@ -1,0 +1,4 @@
+prisma is used to make this project a good and easy to use orm
+https://www.prisma.io/
+
+
