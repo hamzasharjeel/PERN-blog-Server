@@ -1,5 +1,0 @@
-app:
-  main: index.ts
-  node_version: 18
-database:
-  connection_string: "postgres://pernblog_user:NHPBvqyT1FtQGeNXfqiBP69a1HsfrpiM@dpg-cjp3ucr6fquc73emdk4g-a.oregon-postgres.render.com/pernblog"
