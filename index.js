@@ -13,7 +13,6 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
-const cors_1 = __importDefault(require("cors"));
 const client_1 = require("@prisma/client");
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
 const bcrypt_1 = __importDefault(require("bcrypt"));
@@ -22,7 +21,14 @@ const app = (0, express_1.default)();
 const jwtSecret = "mysecret";
 const port = process.env.PORT || 5000;
 app.use((0, cors_1.default)());
-app.use(express_1.default.json());
+const cors = require('cors');
+
+const corsOptions = {
+  origin: '*', // Allow requests from any origin
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE', // Allow the specified HTTP methods
+};
+
+app.use(cors(corsOptions));
 const verifyToken = (req, res, next) => {
     const authHeader = req.header("Authorization");
     if (!authHeader) {
